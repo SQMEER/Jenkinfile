@@ -3,12 +3,12 @@ pipeline{
 	stages{
 	      stage('First stage'){
 		steps{
-		      echo 'Fetching from remort repo'
+		      git branch : 'main', url: https://github.com/SQMEER/mvn.git 
 			}
 		}
 	        stage('second stage'){
 		steps{
-			echo 'This is build phase... '
+			build 'maven_job'
 		     }
 		}
 		stage('Third stage'){
